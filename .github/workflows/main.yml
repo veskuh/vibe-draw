@@ -31,16 +31,16 @@ jobs:
 
     - name: Remove unnecessary Qt plugins to reduce bundle size
       run: |
-        rm -rf draw.app/Contents/PlugIns/sqldrivers
-        rm -rf draw.app/Contents/PlugIns/mediaservice
-        rm -rf draw.app/Contents/PlugIns/printsupport
-        rm -rf draw.app/Contents/PlugIns/position
-        rm -rf draw.app/Contents/PlugIns/sensors
-        rm -rf draw.app/Contents/PlugIns/texttospeech
-        rm -rf draw.app/Contents/PlugIns/virtualkeyboard
+        rm -rf build/draw.app/Contents/PlugIns/sqldrivers
+        rm -rf build/draw.app/Contents/PlugIns/mediaservice
+        rm -rf build/draw.app/Contents/PlugIns/printsupport
+        rm -rf build/draw.app/Contents/PlugIns/position
+        rm -rf build/draw.app/Contents/PlugIns/sensors
+        rm -rf build/draw.app/Contents/PlugIns/texttospeech
+        rm -rf build/draw.app/Contents/PlugIns/virtualkeyboard
 
     - name: Deploy application
-      run: macdeployqt draw.app -dmg
+      run: macdeployqt build/draw.app -dmg
 
     - name: Create Release
       id: create_release
@@ -60,7 +60,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./draw.dmg
+        asset_path: ./build/draw.dmg
         asset_name: draw-${{ github.sha }}.dmg
         asset_content_type: application/octet-stream
 
