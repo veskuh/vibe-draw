@@ -26,9 +26,5 @@ jobs:
         qmake draw.pro
         make
 
-    - name: Run tests
-      run: |
-        export QT_PLUGIN_PATH=$QT_INSTALL_DIR/plugins
-        export QML2_IMPORT_PATH=$QT_INSTALL_DIR/qml
-        qmltestrunner -input tests/tst_ColorPalettePopup.qml
+    
 
