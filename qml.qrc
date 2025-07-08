@@ -1,0 +1,13 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource prefix="/">
+    <file>AppWindow.qml</file>
+    <file>ToolBarContent.qml</file>
+    <file>CanvasArea.qml</file>
+    <file>ColorPalettePopup.qml</file>
+    <file>icons/pen.svg</file>
+    <file>icons/square.svg</file>
+    <file>icons/circle.svg</file>    <file>icons/line.svg</file>
+    <file>icons/erase.svg</file>
+    <file>icons/text.svg</file>
+</qresource>
+</RCC>
