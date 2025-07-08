@@ -20,7 +20,6 @@ jobs:
       with:
         version: '6.2.4'
         arch: 'clang_64'
-        modules: 'qtdeclarative'
 
     - name: Build application
       run: |
@@ -28,5 +27,8 @@ jobs:
         make
 
     - name: Run tests
-      run: qmltestrunner -input tests/tst_ColorPalettePopup.qml
+      run: |
+        export QT_PLUGIN_PATH=$QT_INSTALL_DIR/plugins
+        export QML2_IMPORT_PATH=$QT_INSTALL_DIR/qml
+        qmltestrunner -input tests/tst_ColorPalettePopup.qml
 
