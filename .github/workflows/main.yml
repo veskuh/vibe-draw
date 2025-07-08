@@ -36,15 +36,18 @@ jobs:
     - name: Deploy application
       run: macdeployqt draw.app -dmg -appstore-compliant || true
 
+    - name: Get short SHA
+      id: get_short_sha
+      run: echo "SHORT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        with:
-        tag_name: rc-${{ github.sha_short }}
-        release_name: Release rc-${{ github.sha_short }}
+        tag_name: rc-${{ env.SHORT_SHA }}
+        release_name: Release rc-${{ env.SHORT_SHA }}
         draft: false
         prerelease: true
 
@@ -56,7 +59,7 @@ jobs:
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./draw.dmg
-        asset_name: draw-${{ github.sha }}.dmg
+        asset_name: draw-${{ env.SHORT_SHA }}.dmg
         asset_content_type: application/octet-stream
 
     
