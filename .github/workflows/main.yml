@@ -23,7 +23,6 @@ jobs:
         host: 'mac'
         target: 'desktop'
         arch: 'clang_64'
-        modules: 'qtquick qtquickcontrols2 qtwidgets'
 
     - name: Build application
       run: |
