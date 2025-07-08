@@ -29,6 +29,16 @@ jobs:
         qmake draw.pro
         make
 
+    - name: Remove unnecessary Qt plugins to reduce bundle size
+      run: |
+        rm -rf draw.app/Contents/PlugIns/sqldrivers
+        rm -rf draw.app/Contents/PlugIns/mediaservice
+        rm -rf draw.app/Contents/PlugIns/printsupport
+        rm -rf draw.app/Contents/PlugIns/position
+        rm -rf draw.app/Contents/PlugIns/sensors
+        rm -rf draw.app/Contents/PlugIns/texttospeech
+        rm -rf draw.app/Contents/PlugIns/virtualkeyboard
+
     - name: Deploy application
       run: macdeployqt draw.app -dmg
 
