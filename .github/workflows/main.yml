@@ -29,6 +29,9 @@ jobs:
         qmake draw.pro
         make
 
+    - name: List app bundle contents for debugging
+      run: ls -R draw.app
+
     - name: Remove unnecessary Qt plugins to reduce bundle size
       run: |
         rm -rf draw.app/Contents/PlugIns/sqldrivers
