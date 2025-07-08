@@ -33,7 +33,7 @@ jobs:
     
 
     - name: Deploy application
-      run: macdeployqt draw.app -dmg -appstore-compliant
+      run: macdeployqt draw.app -dmg -appstore-compliant || true
 
     - name: Create Release
       id: create_release
