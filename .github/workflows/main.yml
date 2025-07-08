@@ -27,7 +27,7 @@ jobs:
         make
 
     - name: Deploy application
-      run: macdeployqt build/draw.app -dmg
+      run: macdeployqt draw.app -dmg
 
     - name: Create Release
       id: create_release
@@ -47,7 +47,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./build/draw.dmg
+        asset_path: ./draw.dmg
         asset_name: draw-${{ github.sha }}.dmg
         asset_content_type: application/octet-stream
 
