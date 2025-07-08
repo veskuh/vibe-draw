@@ -19,7 +19,7 @@ jobs:
       uses: jurplel/install-qt-action@v3
       with:
         version: '6.2.4'
-        arch: 'clang_64'
+        arch: 'clang_arm64'
 
     - name: Build application
       run: |
