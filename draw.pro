@@ -1,5 +1,4 @@
 QT += quick quickcontrols2 widgets
-QT -= sql
 
 SOURCES += \
     main.cpp \
