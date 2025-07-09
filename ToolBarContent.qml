@@ -87,7 +87,9 @@ RowLayout {
         MouseArea {
             anchors.fill: parent
             onClicked: {
-                colorPalettePopup.open()
+                if (colorPalettePopup) {
+                    colorPalettePopup.open()
+                }
             }
         }
     }
@@ -95,7 +97,9 @@ RowLayout {
     ToolButton {
         text: "Colors"
         onClicked: {
-            colorPalettePopup.open()
+            if (colorPalettePopup) {
+                colorPalettePopup.open()
+            }
         }
     }
 }

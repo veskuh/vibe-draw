@@ -34,12 +34,8 @@ ApplicationWindow {
             anchors.fill: parent
             currentTool: window.currentTool
             currentColor: window.currentColor
-            colorPalettePopup: window.colorPalettePopup
+            colorPalettePopup: colorPalettePopup
 
-            Connections {
-                target: colorPalettePopup
-                function onColorChanged(color) { currentColor = color }
-            }
             onCurrentColorChanged: {
                 window.currentColor = currentColor
             }
@@ -63,5 +59,12 @@ ApplicationWindow {
     ColorPalettePopup {
         id: colorPalettePopup
         currentColor: currentColor
+
+        Connections {
+            target: colorPalettePopup
+            onColorSelected: {
+                window.currentColor = color
+            }
+        }
     }
 }
