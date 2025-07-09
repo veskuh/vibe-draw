@@ -27,7 +27,7 @@ ApplicationWindow {
 
     header: ToolBar {
         id: toolBar
-        height: 40
+        height: 60
 
         ToolBarContent {
             id: toolBarContent

@@ -15,8 +15,9 @@ RowLayout {
     ToolButton {
         icon.source: "qrc:/icons/pen.svg"
         text: "Pen"
-        implicitWidth: 32
-        implicitHeight: 32
+        display: AbstractButton.TextUnderIcon
+        implicitWidth: 64
+        implicitHeight: 48
         onClicked: {
             currentTool = "pen"
             toolSelected(currentTool)
@@ -26,8 +27,9 @@ RowLayout {
     ToolButton {
         icon.source: "qrc:/icons/square.svg"
         text: "Square"
-        implicitWidth: 32
-        implicitHeight: 32
+        display: AbstractButton.TextUnderIcon
+        implicitWidth: 64
+        implicitHeight: 48
         onClicked: {
             currentTool = "square"
             toolSelected(currentTool)
@@ -37,8 +39,9 @@ RowLayout {
     ToolButton {
         icon.source: "qrc:/icons/circle.svg"
         text: "Circle"
-        implicitWidth: 32
-        implicitHeight: 32
+        display: AbstractButton.TextUnderIcon
+        implicitWidth: 64
+        implicitHeight: 48
         onClicked: {
             currentTool = "circle"
             toolSelected(currentTool)
@@ -48,8 +51,9 @@ RowLayout {
     ToolButton {
         icon.source: "qrc:/icons/line.svg"
         text: "Line"
-        implicitWidth: 32
-        implicitHeight: 32
+        display: AbstractButton.TextUnderIcon
+        implicitWidth: 64
+        implicitHeight: 48
         onClicked: {
             currentTool = "line"
             toolSelected(currentTool)
@@ -59,8 +63,9 @@ RowLayout {
     ToolButton {
         icon.source: "qrc:/icons/erase.svg"
         text: "Erase"
-        implicitWidth: 32
-        implicitHeight: 32
+        display: AbstractButton.TextUnderIcon
+        implicitWidth: 64
+        implicitHeight: 48
         onClicked: {
             currentTool = "erase"
             toolSelected(currentTool)
@@ -70,8 +75,9 @@ RowLayout {
     ToolButton {
         icon.source: "qrc:/icons/text.svg"
         text: "Text"
-        implicitWidth: 32
-        implicitHeight: 32
+        display: AbstractButton.TextUnderIcon
+        implicitWidth: 64
+        implicitHeight: 48
         onClicked: {
             currentTool = "text"
             toolSelected(currentTool)
@@ -96,6 +102,9 @@ RowLayout {
 
     ToolButton {
         text: "Colors"
+        display: AbstractButton.TextUnderIcon
+        implicitWidth: 64
+        implicitHeight: 48
         onClicked: {
             if (colorPalettePopup) {
                 colorPalettePopup.open()
