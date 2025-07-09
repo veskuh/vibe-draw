@@ -9,6 +9,7 @@ Popup {
     height: 200
     modal: true
     focus: true
+    padding: 0
 
     property color currentColor: "blue"
     property var colorPalette: [
@@ -24,12 +25,6 @@ Popup {
 
     signal colorChanged(color color)
     signal colorSelected(color color)
-
-    background: Rectangle {
-        color: "white"
-        border.color: "black"
-        border.width: 1
-    }
 
     GridView {
         id: colorGrid
