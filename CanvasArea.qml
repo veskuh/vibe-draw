@@ -84,7 +84,7 @@ Canvas {
         color: currentColor
         onAccepted: {
             if (text.length > 0 && shapes !== undefined) {
-                shapes.push({ type: "text", text: text, x: x, y: y, color: currentColor });
+                shapes.push(JSON.parse(JSON.stringify({ type: "text", text: text, x: x, y: y, color: currentColor })));
                 shapesUpdated(shapes);
             }
             textInput.visible = false;
@@ -125,7 +125,7 @@ Canvas {
         }
         onReleased: {
             if (currentShape && currentTool !== "text" && shapes !== undefined) {
-                shapes.push(currentShape);
+                shapes.push(JSON.parse(JSON.stringify(currentShape)));
                 shapesUpdated(shapes);
                 currentShape = null;
                 canvas.requestPaint();
